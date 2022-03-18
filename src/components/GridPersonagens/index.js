@@ -1,0 +1,1 @@
+export { GridPersonagens } from './GridPersonagens'

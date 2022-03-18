@@ -1,18 +1,28 @@
-import './App.css'
-import { Grid } from 'components/Grid'
+import React from 'react'
 import { ProviderPersonagens } from 'components/ProviderPersonagens'
 import { ProviderFiltro } from 'components/ProviderFiltro'
 import { ProviderFavoritos } from 'components/ProviderFavoritos'
 import { filtroInicialPersonagens } from 'components/ProviderPersonagens/filtroInicialPersonagens'
-import { CardPersonagem } from 'components/CardPersonagem'
+import { makeStyles } from '@mui/styles'
+import { GridPersonagens } from 'components/GridPersonagens'
+
+const useClasses = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '2rem 0 ',
+  },
+})
 
 export const App = () => {
+  const classes = useClasses()
   return (
-    <div className="App">
+    <div className={classes.root}>
       <ProviderFavoritos chave="personagensFavoritos">
         <ProviderFiltro filtroInicial={filtroInicialPersonagens}>
           <ProviderPersonagens>
-            <Grid instancias={[1, 2, 3, 4, 5, 6, 7, 8]} Card={CardPersonagem} />
+            <GridPersonagens />
           </ProviderPersonagens>
         </ProviderFiltro>
       </ProviderFavoritos>

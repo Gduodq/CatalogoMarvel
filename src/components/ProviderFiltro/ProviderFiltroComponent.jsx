@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export const ProviderFiltroContext = React.createContext()
 ProviderFiltroContext.propName = 'filtroContext'
-export const useProviderFiltroContext = () => React.useContext(ProviderFiltroContext)
+export const useFiltroContext = () => React.useContext(ProviderFiltroContext)
 
 export const ProviderFiltroControl = React.createContext()
 ProviderFiltroControl.propName = 'filtroControl'
-export const useProviderFiltroControl = () => React.useContext(ProviderFiltroControl)
+export const useFiltroControl = () => React.useContext(ProviderFiltroControl)
 
 export class ProviderFiltroComponent extends Component {
   constructor(props) {

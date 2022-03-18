@@ -1,0 +1,1 @@
+export { CardPersonagem } from './CardPersonagem'

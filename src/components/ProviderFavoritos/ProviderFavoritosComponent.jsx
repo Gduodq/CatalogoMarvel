@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export const ProviderFavoritosContext = React.createContext()
 ProviderFavoritosContext.propName = 'favoritosContext'
-export const useProviderFavoritosContext = () => React.useContext(ProviderFavoritosContext)
+export const useFavoritosContext = () => React.useContext(ProviderFavoritosContext)
 
 export const ProviderFavoritosControl = React.createContext()
 ProviderFavoritosControl.propName = 'favoritosControl'
-export const useProviderFavoritosControl = () => React.useContext(ProviderFavoritosControl)
+export const useFavoritosControl = () => React.useContext(ProviderFavoritosControl)
 
 export class ProviderFavoritosComponent extends Component {
   chave
