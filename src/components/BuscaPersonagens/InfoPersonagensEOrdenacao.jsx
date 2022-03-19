@@ -19,7 +19,7 @@ const useClasses = makeStyles({
   wrapperSwitch: {
     display: 'flex',
     alignItems: 'center',
-    color: '#e25800ad',
+    color: '#FF0000',
     fontSize: '1rem',
     fontWeight: 500,
     gap: '1rem',

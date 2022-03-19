@@ -6,16 +6,16 @@ import { strings } from 'utils/strings'
 
 const useClasses = makeStyles({
   input: {
-    width: 'max(175px, 65%)',
+    width: 'max(200px, 65%)',
     height: '3rem',
     padding: '0 1rem',
     borderRadius: '1rem',
-    backgroundColor: '#fed7d7',
+    backgroundColor: '#FDECEC',
     border: 0,
-    color: '#e25800ad',
+    color: '#FF0000',
     fontSize: '1rem',
     fontWeight: 600,
-    '&::placeholder': { color: '#e25800ad' },
+    '&::placeholder': { color: '#FF0000' },
   },
 })
 

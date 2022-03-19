@@ -27,7 +27,7 @@ const useClasses = makeStyles({
       top: '4px',
       width: '17px',
       height: '17px',
-      backgroundColor: alterarCor && isToggled ? '#6699cc' : '#e25800ad',
+      backgroundColor: alterarCor && isToggled ? '#6699cc' : '#FF0000',
       borderRadius: '50%',
       transition: 'transform 0.3s ease',
       transform: isToggled ? 'translateX(24px)' : '',
