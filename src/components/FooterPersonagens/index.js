@@ -1,0 +1,1 @@
+export { FooterPersonagens } from './FooterPersonagens'
