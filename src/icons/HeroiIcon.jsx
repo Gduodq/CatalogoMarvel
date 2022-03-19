@@ -10,8 +10,8 @@ export const HeroiIcon = ({ color = '#FF0000', width = 18, height = 27 }) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
-      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Guide" transform="translate(-78.000000, -824.000000)" fill={color} fill-rule="nonzero">
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Guide" transform="translate(-78.000000, -824.000000)" fill={color} fillRule="nonzero">
           <g id="ic_heroi" transform="translate(78.000000, 824.000000)">
             <path
               d="M8.7752,5.3984 C10.265927,5.3984 11.4744,4.189927 11.4744,2.6992 C11.4744,1.208473 10.265927,0 8.7752,0 C7.284473,0 6.076,1.208473 6.076,2.6992 C6.076,4.189927 7.284473,5.3984 8.7752,5.3984 Z"

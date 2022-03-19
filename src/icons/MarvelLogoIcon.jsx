@@ -12,7 +12,7 @@ export const SearchIcon = ({ color = '#404040', width = 326, height = 120 }) => 
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
-      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Guide" transform="translate(-65.000000, -161.000000)">
           <g id="logo" transform="translate(65.000000, 161.000000)">
             <image
