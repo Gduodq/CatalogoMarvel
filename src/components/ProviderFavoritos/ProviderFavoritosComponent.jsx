@@ -14,9 +14,9 @@ export class ProviderFavoritosComponent extends Component {
     super(props)
     this.chave = props.chave || 'favoritos'
     if (!props.chave) console.warn('Chave não informada no ProviderFavoritos, chave default será usada (favoritos)')
-    this.limiteFavorios = Number(props.limiteFavorios) || 0
+    this.limiteFavoritos = Number(props.limiteFavoritos) || 0
     this.state = { favoritos: null }
-    this.control = { addFavorito: this.addFavorito, removerFavorito: this.removerFavorito }
+    this.control = { addFavorito: this.addFavorito, removerFavorito: this.removerFavorito, ehFavorito: this.ehFavorito }
   }
 
   componentDidMount() {
@@ -24,8 +24,8 @@ export class ProviderFavoritosComponent extends Component {
   }
 
   quantidadeFavoritosValida = (favoritos) => {
-    if (Number.isNaN(this.limiteFavorios) || this.limiteFavorios <= 0) return true
-    return favoritos.length <= this.limiteFavorios
+    if (Number.isNaN(this.limiteFavoritos) || this.limiteFavoritos <= 0) return true
+    return favoritos.length <= this.limiteFavoritos
   }
 
   carregarFavoritos = () => {
@@ -34,9 +34,10 @@ export class ProviderFavoritosComponent extends Component {
     this.setState({ favoritos })
   }
 
-  atualizarFavoritos = (favoritos, { persistir = true }) => {
+  atualizarFavoritos = (favoritos, { persistir = true } = {}) => {
     if (!this.quantidadeFavoritosValida(favoritos)) return
     this.setState({ favoritos }, persistir ? this.persistirFavoritos : undefined)
+    return true
   }
 
   persistirFavoritos = () => {
@@ -44,10 +45,7 @@ export class ProviderFavoritosComponent extends Component {
     sessionStorage.setItem(this.chave, favoritosString)
   }
 
-  addFavorito = (favorito) => {
-    if (this.state.favoritos.length > this.props.limiteFavoritos)
-      this.atualizarFavoritos([...this.state.favoritos, favorito])
-  }
+  addFavorito = (favorito) => this.atualizarFavoritos([...this.state.favoritos, favorito])
 
   removerFavorito = (favoritoId) => {
     const favoritos = this.state.favoritos.filter((favorito) => favorito.id !== favoritoId)
@@ -55,6 +53,8 @@ export class ProviderFavoritosComponent extends Component {
   }
 
   limparFavoritos = () => this.atualizarFavoritos([])
+
+  ehFavorito = (favoritoId) => this.state.favoritos.find((favorito) => favorito.id === favoritoId)
 
   render() {
     const { children } = this.props

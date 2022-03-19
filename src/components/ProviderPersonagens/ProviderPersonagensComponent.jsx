@@ -23,13 +23,15 @@ ProviderPersonagensControl.propName = 'personagensControl'
 export const usePersonagensControl = () => React.useContext(ProviderPersonagensControl)
 
 export class ProviderPersonagensComponent extends Component {
+  personagensSaoFavoritos = false
   constructor(props) {
     super(props)
     this.state = { personagens: [], personagemAtual: null, carregando: true, erro: false }
     this.control = {
       fetchPersonagens: this.fetchPersonagens,
       setPersonagemAtual: this.setPersonagemAtual,
-      setPersonagens: this.setPersonagens,
+      setPersonagensFavoritos: this.setPersonagensFavoritos,
+      unsetPersonagensFavoritos: this.unsetPersonagensFavoritos,
     }
   }
 
@@ -38,6 +40,7 @@ export class ProviderPersonagensComponent extends Component {
   }
 
   fetchPersonagens = async () => {
+    if (this.personagensSaoFavoritos) return
     this.setState({ carregando: true, erro: false })
     try {
       const route = routesAPI.getPersonagens()
@@ -46,6 +49,7 @@ export class ProviderPersonagensComponent extends Component {
       const { data } = await api.get(query)
       const personagensBase = data.data.results
       const personagens = personagensBase.map(this.filtrarInfoPersonagens)
+      if (this.personagensSaoFavoritos) return this.setState({ carregando: false })
       this.setState({ personagens, carregando: false })
     } catch (e) {
       console.error('Ocorreu um erro ao recuperar os personagens', e)
@@ -61,7 +65,12 @@ export class ProviderPersonagensComponent extends Component {
     return { id, name, imageURL }
   }
 
-  setPersonagens = (personagens) => this.setState({ personagens })
+  setPersonagensFavoritos = (personagens) => this.setState({ personagens }, () => (this.personagensSaoFavoritos = true))
+
+  unsetPersonagensFavoritos = () => {
+    this.personagensSaoFavoritos = false
+    this.fetchPersonagens()
+  }
 
   render() {
     const { children } = this.props
