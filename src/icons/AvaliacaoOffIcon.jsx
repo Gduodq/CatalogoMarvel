@@ -8,7 +8,6 @@ export const AvaliacaoOffIcon = ({ color = '#FFBEBE', width = 16, height = 15 })
       viewBox={`0 0 ${width} ${height}`}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Guide" transform="translate(-483.000000, -877.000000)" fill={color} fillRule="nonzero">

@@ -8,7 +8,6 @@ export const QuadrinhosIcon = ({ color = '#FF0000', width = 28, height = 31 }) =
       viewBox={`0 0 ${width} ${height}`}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Guide" transform="translate(-303.000000, -823.000000)" fill={color} fillRule="nonzero">

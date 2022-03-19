@@ -5,7 +5,7 @@ export const FavoritoOffIcon = ({ color = '#FF0000', width = 18, height = 18 }) 
     <svg
       width={width}
       height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      viewBox={`0 0 ${1.1 * width} ${1.1 * height}`}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
