@@ -8,7 +8,7 @@ Como solução de estilo é utilizada a biblioteca focada em CSS-in-Js do [Mater
 
 Para manutenção do código são utilizados os pacotes [Cypress](https://www.cypress.io), [ESLint](https://eslint.org) e [Prettier](https://prettier.io).
 
-Para acessar a aplicação sem a necessidade de instalar localmente acesse [https://github.com/Gduodq/CatalogoMarvel](https://github.com/Gduodq/CatalogoMarvel).
+Para acessar a aplicação sem a necessidade de instalar localmente acesse [https://catalogo-marvel-sigma.vercel.app](https://catalogo-marvel-sigma.vercel.app).
 
 ## Scripts disponíveis
 
