@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import { api } from 'api'
 import { routesAPI } from 'utils/routesAPI'
 
-export const ProviderPersonagemAtualContext = React.createContext()
-ProviderPersonagemAtualContext.propName = 'personagemAtual'
-export const usePersonagemAtual = () => React.useContext(ProviderPersonagemAtualContext)
-
 export const ProviderPersonagensCarregandoContext = React.createContext()
 ProviderPersonagensCarregandoContext.propName = 'personagensCarregando'
 export const usePersonagensCarregando = () => React.useContext(ProviderPersonagensCarregandoContext)
@@ -26,10 +22,9 @@ export class ProviderPersonagensComponent extends Component {
   personagensSaoFavoritos = false
   constructor(props) {
     super(props)
-    this.state = { personagens: [], personagemAtual: null, carregando: true, erro: false }
+    this.state = { personagens: [], carregando: true, erro: false }
     this.control = {
       fetchPersonagens: this.fetchPersonagens,
-      setPersonagemAtual: this.setPersonagemAtual,
       setPersonagensFavoritos: this.setPersonagensFavoritos,
       unsetPersonagensFavoritos: this.unsetPersonagensFavoritos,
     }
@@ -57,12 +52,17 @@ export class ProviderPersonagensComponent extends Component {
     }
   }
 
-  setPersonagemAtual = (personagemAtual) => this.setState({ personagemAtual })
-
   filtrarInfoPersonagens = (personagem) => {
-    const { id, name, thumbnail } = personagem
+    const { id, name, description, thumbnail, comics, events } = personagem
     const imageURL = thumbnail.path + '.' + thumbnail.extension
-    return { id, name, imageURL }
+    return {
+      id,
+      name,
+      description,
+      imageURL,
+      quadrinhosDisponiveis: comics.available,
+      eventosDisponiveis: events.available,
+    }
   }
 
   setPersonagensFavoritos = (personagens) => this.setState({ personagens }, () => (this.personagensSaoFavoritos = true))
@@ -77,11 +77,9 @@ export class ProviderPersonagensComponent extends Component {
     return (
       <ProviderPersonagensErroContext.Provider value={this.state.erro}>
         <ProviderPersonagensCarregandoContext.Provider value={this.state.carregando}>
-          <ProviderPersonagemAtualContext.Provider value={this.state.personagemAtual}>
-            <ProviderPersonagensContext.Provider value={this.state.personagens}>
-              <ProviderPersonagensControl.Provider value={this.control}>{children}</ProviderPersonagensControl.Provider>
-            </ProviderPersonagensContext.Provider>
-          </ProviderPersonagemAtualContext.Provider>
+          <ProviderPersonagensContext.Provider value={this.state.personagens}>
+            <ProviderPersonagensControl.Provider value={this.control}>{children}</ProviderPersonagensControl.Provider>
+          </ProviderPersonagensContext.Provider>
         </ProviderPersonagensCarregandoContext.Provider>
       </ProviderPersonagensErroContext.Provider>
     )
