@@ -58,6 +58,7 @@ export const InputBuscaPersonagens = ({ className, onEnter }) => {
         <SearchIcon />
       </i>
       <input
+        data-testid="input-busca-personagens"
         className={classes.input}
         value={filtro.nameStartsWith || ''}
         type="search"

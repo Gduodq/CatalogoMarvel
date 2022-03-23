@@ -54,14 +54,14 @@ export const InfoPersonagensEOrdenacao = () => {
   )
   return (
     <div className={classes.root}>
-      <div>
+      <div data-testid="herois-encontrados">
         <span className={classes.textoEncontrados}>{strings.encontradosXHerois(personagens.length)}</span>
       </div>
       <div className={classes.wrapperSwitch}>
         <div className={classes.wrapperIconTexto}>
           <HeroiIcon /> <span className={classes.textoSwitch}>{strings.ordenarPorNomeAZ}</span>
         </div>
-        <ToggleSwitch alterarCor={false} onChange={onChangeSwitch} />
+        <ToggleSwitch alterarCor={false} onChange={onChangeSwitch} data-testid="switch-favoritos" />
         <div className={classes.wrapperIconTexto}>
           <FavoritoOnIcon /> <span className={classes.textoSwitch}>{strings.somenteFavoritos}</span>
         </div>

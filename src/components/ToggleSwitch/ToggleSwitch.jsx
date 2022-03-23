@@ -35,7 +35,7 @@ const useClasses = makeStyles({
   }),
 })
 
-export const ToggleSwitch = ({ alterarCor = true, onChange }) => {
+export const ToggleSwitch = ({ alterarCor = true, onChange, ...props }) => {
   const [isToggled, setIsToggled] = React.useState(false)
   const classes = useClasses({ isToggled, alterarCor })
   const onToggle = () => {
@@ -43,7 +43,7 @@ export const ToggleSwitch = ({ alterarCor = true, onChange }) => {
     setIsToggled(!isToggled)
   }
   return (
-    <div className={classes.root}>
+    <div className={classes.root} data-testid={props['data-testid']}>
       <label className={classes.switch}>
         <input className={classes.switchInput} type="checkbox" checked={isToggled} onChange={onToggle} />
         <span className={classes.slider} />

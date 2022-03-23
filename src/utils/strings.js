@@ -12,4 +12,5 @@ export const strings = {
   ultimosLancamentos: 'Últimos lançamentos',
   naoHaDescricaoParaPersonagem: 'Não foi encontrada descrição para o(a) personagem.',
   recarregar: 'Recarregar',
+  carregando: 'Carregando',
 }

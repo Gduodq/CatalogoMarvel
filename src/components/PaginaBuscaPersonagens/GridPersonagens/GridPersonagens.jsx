@@ -22,5 +22,5 @@ export const GridPersonagens = () => {
   const classes = useClasses()
   if (personagensCarregando) return <div>Carregando...</div>
   if (personagensErro) return <RecarregarButton onClick={personagensControl.fetchPersonagens} />
-  return <Grid instancias={personagens} Card={CardPersonagem} className={classes.grid} />
+  return <Grid instancias={personagens} Card={CardPersonagem} className={classes.grid} data-testid="grid-personagens" />
 }

@@ -33,7 +33,7 @@ export const CardPersonagem = ({ instancia }) => {
     paginaPersonagemControl.abrirPaginaPersonagem()
   }, [])
   return (
-    <div className={classes.rootCard}>
+    <div className={classes.rootCard} data-testid="card-personagem">
       <img src={instancia.imageURL} className={classes.imagemPersonagem} onClick={onClickImagem} alt="" />
       <div className={classes.stripe} />
       <div className={classes.bottomCard}>

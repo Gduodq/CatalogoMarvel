@@ -8,6 +8,7 @@ export const FavoritoOffIcon = ({ color = '#FF0000', width = 18, height = 18 }) 
       viewBox={`0 0 ${1.1 * width} ${1.1 * height}`}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="favorito-icon-off"
     >
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Guide" transform="translate(-231.000000, -828.000000)" fillRule="nonzero" stroke={color} strokeWidth="2">

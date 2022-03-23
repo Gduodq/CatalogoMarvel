@@ -22,7 +22,7 @@ export const PersonagemFavoritoIconButton = ({ personagem }) => {
     setEhFavorito(!ehFavorito)
   }, [ehFavorito])
   return (
-    <div className={classes.favorito}>
+    <div className={classes.favorito} data-testid="favorito-button">
       <button className={classes.buttonInvisible} onClick={handleClickFavorito}>
         {ehFavorito ? <FavoritoOnIcon /> : <FavoritoOffIcon />}
       </button>

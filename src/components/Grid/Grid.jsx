@@ -10,10 +10,10 @@ const useClasses = makeStyles({
   },
 })
 
-export const Grid = ({ instancias, Card, className = '' }) => {
+export const Grid = ({ instancias, Card, className = '', ...props }) => {
   const classes = useClasses()
   return (
-    <div className={classNames(classes.grid, className)}>
+    <div className={classNames(classes.grid, className)} data-testid={props['data-testid']}>
       {instancias.map((instancia, index) => (
         <Fragment key={typeof instancia === 'object' && instancia.id ? instancia.id : index}>
           <Card instancia={instancia} />
