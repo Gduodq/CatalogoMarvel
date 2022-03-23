@@ -1,0 +1,1 @@
+export { PaginaPersonagemAtual } from './PaginaPersonagemAtual'
