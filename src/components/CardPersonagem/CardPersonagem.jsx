@@ -1,11 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
-import { FavoritoOffIcon } from 'icons/FavoritoOffIcon'
-import { useFavoritosControl } from 'components/ProviderFavoritos/ProviderFavoritosComponent'
-import { FavoritoOnIcon } from 'icons/FavoritoOnIcon'
+import { usePaginaPersonagemControl } from 'components/ProviderPaginaPersonagem'
+import { PersonagemFavoritoIconButton } from 'components/PersonagemFavoritoIconButton'
 
 const useClasses = makeStyles({
-  rootCard: { display: 'flex', flexDirection: 'column', height: 250 },
+  rootCard: { display: 'flex', flexDirection: 'column', height: '14rem', width: '14rem' },
   imagemPersonagem: { width: '100%', height: '77%', cursor: 'pointer', '&:hover': { filter: 'brightness(0.75)' } },
   stripe: { width: '100%', backgroundColor: '#FF0000', height: '5px' },
   bottomCard: {
@@ -24,25 +23,15 @@ const useClasses = makeStyles({
     marginRight: 7,
   },
   fonteNome: { fontSize: '1.1rem', fontWeight: 500 },
-  favorito: { display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: 'auto', cursor: 'pointer' },
-  buttonInvisible: { backgroundColor: 'transparent', border: 'none', cursor: 'pointer' },
 })
 
 export const CardPersonagem = ({ instancia }) => {
   const classes = useClasses()
-  const favoritosControl = useFavoritosControl()
-  const [ehFavorito, setEhFavorito] = React.useState(favoritosControl.ehFavorito(instancia.id))
+  const paginaPersonagemControl = usePaginaPersonagemControl()
   const onClickImagem = React.useCallback(() => {
-    console.log(instancia)
+    paginaPersonagemControl.setPersonagemAtual(instancia)
+    paginaPersonagemControl.abrirPaginaPersonagem()
   }, [])
-  const handleClickFavorito = React.useCallback(() => {
-    if (ehFavorito) favoritosControl.removerFavorito(instancia.id)
-    else {
-      const favoritoAdicionado = favoritosControl.addFavorito(instancia)
-      if (!favoritoAdicionado) return console.warn('Quantidade de favoritos atingiu o limite')
-    }
-    setEhFavorito(!ehFavorito)
-  }, [ehFavorito])
   return (
     <div className={classes.rootCard}>
       <img src={instancia.imageURL} className={classes.imagemPersonagem} onClick={onClickImagem} alt="" />
@@ -51,11 +40,7 @@ export const CardPersonagem = ({ instancia }) => {
         <div className={classes.nomePersonagem}>
           <span className={classes.fonteNome}>{instancia.name}</span>
         </div>
-        <div className={classes.favorito}>
-          <button className={classes.buttonInvisible} onClick={handleClickFavorito}>
-            {ehFavorito ? <FavoritoOnIcon /> : <FavoritoOffIcon />}
-          </button>
-        </div>
+        <PersonagemFavoritoIconButton personagem={instancia} />
       </div>
     </div>
   )
