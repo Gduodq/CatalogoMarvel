@@ -1,1 +1,0 @@
-export { GridPersonagens } from './GridPersonagens'

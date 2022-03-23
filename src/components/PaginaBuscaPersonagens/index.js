@@ -1,1 +1,0 @@
-export { PaginaBuscaPersonagens } from './PaginaBuscaPersonagens'

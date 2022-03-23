@@ -1,1 +1,0 @@
-export { HeaderPersonagens } from './HeaderPersonagens'

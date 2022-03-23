@@ -1,1 +1,0 @@
-export { InputBuscaPersonagens } from './InputBuscaPersonagens'

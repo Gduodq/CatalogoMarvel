@@ -1,1 +1,0 @@
-export { CardPersonagem } from './CardPersonagem'

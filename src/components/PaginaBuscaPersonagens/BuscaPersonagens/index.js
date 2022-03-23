@@ -1,1 +1,0 @@
-export { BuscaPersonagens } from './BuscaPersonagens'
