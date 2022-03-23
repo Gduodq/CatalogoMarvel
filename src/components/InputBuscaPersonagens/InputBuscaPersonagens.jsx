@@ -7,7 +7,7 @@ import { SearchIcon } from 'icons/SearchIcon'
 import classNames from 'classnames'
 
 const useClasses = makeStyles({
-  root: { width: 'max(13rem, 68%)', height: '3.5rem' },
+  root: { width: 'clamp(19rem, 68%, 38rem)', height: '3.5rem' },
   icon: { position: 'relative', top: 'calc(50% - 20px)', left: 'calc(1rem + 30px)' },
   input: {
     width: 'calc(100% - 40px)',

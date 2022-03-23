@@ -9,7 +9,7 @@ const useClasses = makeStyles({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    width: 'min(1000px, 100%)',
+    width: 'min(62rem, 95%)',
     '@media (max-width: 680px)': { flexDirection: 'column', gap: '2rem', justifyContent: 'center' },
   },
   logoMarvel: { cursor: 'pointer' },

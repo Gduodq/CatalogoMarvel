@@ -5,8 +5,9 @@ import classNames from 'classnames'
 const useClasses = makeStyles({
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(13.5rem, 1fr))',
     gap: '1rem',
+    placeItems: 'center',
   },
 })
 

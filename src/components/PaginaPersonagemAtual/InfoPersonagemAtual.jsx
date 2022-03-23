@@ -11,7 +11,7 @@ const useClasses = makeStyles({
   root: ({ nome }) => ({
     display: 'flex',
     alignItems: 'center',
-    width: 'min(1000px, 100%)',
+    width: 'min(62rem, 95%)',
     overflowX: 'hidden',
     '&:before': {
       position: 'relative',

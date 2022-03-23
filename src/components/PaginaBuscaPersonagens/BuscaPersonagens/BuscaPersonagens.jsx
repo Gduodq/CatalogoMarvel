@@ -5,7 +5,7 @@ import { InfoPersonagensEOrdenacao } from './InfoPersonagensEOrdenacao'
 
 const useClasses = makeStyles({
   root: {
-    width: 'min(900px, 100%)',
+    width: 'min(59rem, 95%)',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
