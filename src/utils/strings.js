@@ -6,4 +6,10 @@ export const strings = {
   exploreOUniverso: 'Explore o universo',
   subtituloHeaderPersonagens:
     'Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!',
+  quadrinhos: 'Quadrinhos',
+  eventos: 'Eventos',
+  rating: 'Rating',
+  ultimosLancamentos: 'Últimos lançamentos',
+  naoHaDescricaoParaPersonagem: 'Não foi encontrada descrição para o(a) personagem.',
+  recarregar: 'Recarregar',
 }
