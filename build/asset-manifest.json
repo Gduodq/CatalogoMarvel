@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CatalogoMarvel/static/css/main.e6c13ad2.css",
+    "main.js": "/CatalogoMarvel/static/js/main.70c066d4.js",
+    "static/js/787.510dce41.chunk.js": "/CatalogoMarvel/static/js/787.510dce41.chunk.js",
+    "index.html": "/CatalogoMarvel/index.html",
+    "main.e6c13ad2.css.map": "/CatalogoMarvel/static/css/main.e6c13ad2.css.map",
+    "main.70c066d4.js.map": "/CatalogoMarvel/static/js/main.70c066d4.js.map",
+    "787.510dce41.chunk.js.map": "/CatalogoMarvel/static/js/787.510dce41.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.70c066d4.js"
+  ]
+}
