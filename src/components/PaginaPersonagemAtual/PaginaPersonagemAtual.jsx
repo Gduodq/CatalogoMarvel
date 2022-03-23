@@ -26,7 +26,7 @@ export const PaginaPersonagemAtual = () => {
       paginaPersonagemControl.fetchUltimosQuadrinhos()
       window.scrollTo(0, 0)
     }
-  }, [paginaPersonagemAberta])
+  }, [paginaPersonagemAberta, paginaPersonagemControl])
   if (!paginaPersonagemAberta) return null
   return (
     <div className={classes.root}>

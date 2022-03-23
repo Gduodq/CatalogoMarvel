@@ -20,7 +20,7 @@ export const PersonagemFavoritoIconButton = ({ personagem }) => {
       if (!favoritoAdicionado) return console.warn('Quantidade de favoritos atingiu o limite')
     }
     setEhFavorito(!ehFavorito)
-  }, [ehFavorito])
+  }, [ehFavorito, favoritosControl, personagem])
   return (
     <div className={classes.favorito} data-testid="favorito-button">
       <button className={classes.buttonInvisible} onClick={handleClickFavorito}>

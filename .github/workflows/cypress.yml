@@ -13,6 +13,8 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_PUBLIC_KEY: a76ada506a18de2e1a96f3aa50c0ea39
     strategy:
       matrix:
         node-version: [14.x]

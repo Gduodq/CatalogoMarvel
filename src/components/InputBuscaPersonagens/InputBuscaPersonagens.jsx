@@ -37,7 +37,7 @@ export const InputBuscaPersonagens = ({ className, onEnter }) => {
         filtroControl.setFiltro({ ...filtro })
       }
     },
-    [filtro],
+    [filtro, filtroControl],
   )
   const teclasEspeciais = React.useMemo(
     () => ({
@@ -46,12 +46,15 @@ export const InputBuscaPersonagens = ({ className, onEnter }) => {
         await personagensControl.fetchPersonagens()
       },
     }),
-    [onEnter],
+    [onEnter, personagensControl],
   )
-  const handleKeyDown = React.useCallback(async (event) => {
-    const handleTeclaEspecial = teclasEspeciais[event.key]
-    if (handleTeclaEspecial) await handleTeclaEspecial()
-  }, [])
+  const handleKeyDown = React.useCallback(
+    async (event) => {
+      const handleTeclaEspecial = teclasEspeciais[event.key]
+      if (handleTeclaEspecial) await handleTeclaEspecial()
+    },
+    [teclasEspeciais],
+  )
   return (
     <div className={classNames(classes.root, className)}>
       <i className={classes.icon}>

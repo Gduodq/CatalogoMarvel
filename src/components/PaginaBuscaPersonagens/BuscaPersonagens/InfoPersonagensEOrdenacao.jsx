@@ -50,7 +50,7 @@ export const InfoPersonagensEOrdenacao = () => {
       if (switchValue) personagensControl.setPersonagensFavoritos(favoritos)
       else personagensControl.unsetPersonagensFavoritos()
     },
-    [favoritos],
+    [favoritos, filtroControl, personagensControl],
   )
   return (
     <div className={classes.root}>

@@ -31,7 +31,7 @@ export const CardPersonagem = ({ instancia }) => {
   const onClickImagem = React.useCallback(() => {
     paginaPersonagemControl.setPersonagemAtual(instancia)
     paginaPersonagemControl.abrirPaginaPersonagem()
-  }, [])
+  }, [instancia, paginaPersonagemControl])
   return (
     <div className={classes.rootCard} data-testid="card-personagem">
       <img src={instancia.imageURL} className={classes.imagemPersonagem} onClick={onClickImagem} alt="" />
