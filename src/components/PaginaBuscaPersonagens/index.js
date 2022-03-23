@@ -1,0 +1,1 @@
+export { PaginaBuscaPersonagens } from './PaginaBuscaPersonagens'

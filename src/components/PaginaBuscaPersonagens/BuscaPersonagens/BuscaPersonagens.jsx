@@ -1,12 +1,6 @@
 import React from 'react'
-import { Grid } from 'components/Grid'
-import {
-  usePersonagensContext,
-  usePersonagensControl,
-} from 'components/ProviderPersonagens/ProviderPersonagensComponent'
-import { CardPersonagem } from 'components/CardPersonagem'
 import { makeStyles } from '@mui/styles'
-import { InputBuscaPersonagens } from './InputBuscaPersonagens'
+import { InputBuscaPersonagens } from 'components/InputBuscaPersonagens'
 import { InfoPersonagensEOrdenacao } from './InfoPersonagensEOrdenacao'
 
 const useClasses = makeStyles({
