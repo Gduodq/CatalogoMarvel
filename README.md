@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Catálogo de Heróis da Marvel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse projeto foi iniciado com o [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+O projeto utiliza a [API da Marvel](https://developer.marvel.com/docs) para consultar os dados dos heróis.
 
-In the project directory, you can run:
+Como solução de estilo é utilizada a biblioteca focada em CSS-in-Js do [Material-UI](https://mui.com).
+
+Para manutenção do código são utilizados os pacotes [Cypress](https://www.cypress.io), [ESLint](https://eslint.org) e [Prettier](https://prettier.io).
+
+## Scripts disponíveis
+
+Na pasta do projeto você pode utilizar dos comandos abaixo:
+
+### `npm i`
+
+Instala as dependências para a aplicação ser executada.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Roda a aplicação em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para ver a aplicação no browser.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Constroi a aplicação para produção na pasta `build`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run start-build-on-background`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esse comando espera que a aplicação esteja construída na pasta `build` e a inicia como um processo em background.
 
-### `npm run eject`
+### `npm run stop-build-background`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para e apaga o processo em background iniciado pelo comando `npm run start-build-on-background`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm run cypress:open`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Abre o cypress de forma interativa para acompanhar e interagir com os testes no browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `npm run cypress:run`
 
-## Learn More
+Abre o cypress via terminal e roda todos os testes do projeto.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm run lint`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Checa por problemas de sintaxe no código da pasta `src` com o ESLint.
 
-### Code Splitting
+## Variáveis em ambiente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Para a utilização da aplicação é necessário que seja criado um arquivo `.env` na raiz do projeto para a inserção de variáveis de ambiente.
 
-### Analyzing the Bundle Size
+### REACT_APP_API_PUBLIC_KEY (`Obrigatória`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Essa variável é responsável por setar a API_KEY para autenticação com a API da Marvel.\
+Para mais informações acesse [este link](https://developer.marvel.com/).
