@@ -1,0 +1,1 @@
+export { PersonagemFavoritoIconButton } from './PersonagemFavoritoIconButton'
