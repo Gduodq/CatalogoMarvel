@@ -11,7 +11,7 @@ on:
       - '**'
 
 jobs:
-  cypress-run:
+  tests:
     runs-on: ubuntu-latest
     env:
       REACT_APP_API_PUBLIC_KEY: a76ada506a18de2e1a96f3aa50c0ea39
@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: npm lint
       - run: npm ci
       - run: npm run build --if-present
       - run: npm run start-build-on-background
