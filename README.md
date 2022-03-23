@@ -45,7 +45,7 @@ Abre o cypress via terminal e roda todos os testes do projeto.
 
 Checa por problemas de sintaxe no código da pasta `src` com o ESLint.
 
-## Variáveis em ambiente
+## Variáveis de ambiente
 
 Para a utilização da aplicação é necessário que seja criado um arquivo `.env` na raiz do projeto para a inserção de variáveis de ambiente.
 
