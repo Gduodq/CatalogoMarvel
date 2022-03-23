@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
+    "pm2": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -19,6 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "start-build-on-background": "pm2 serve build 3000 --spa --name catalogo-marvel",
+    "stop-build-background": "pm2 delete catalogo-marvel",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
