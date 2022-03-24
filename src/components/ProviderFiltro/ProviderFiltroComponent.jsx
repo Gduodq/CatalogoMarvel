@@ -12,14 +12,18 @@ export class ProviderFiltroComponent extends Component {
   constructor(props) {
     super(props)
     this.state = { filtro: this.props.filtroInicial || {} }
-    this.control = { setFiltro: this.setFiltro, limparFiltro: this.limparFiltro, getFiltro: this.getFiltro }
+    this.control = {
+      setFiltroAsync: this.setFiltroAsync,
+      limparFiltro: this.limparFiltro,
+      getFiltro: this.getFiltro,
+    }
   }
 
-  setFiltro = (filtro) => this.setState({ filtro })
+  setFiltroAsync = (filtro) => new Promise((res) => this.setState({ filtro }, res))
 
   getFiltro = () => this.state.filtro
 
-  limparFiltro = () => this.setFiltro(this.props.filtroInicial || {})
+  limparFiltro = () => this.setFiltroAsync(this.props.filtroInicial || {})
 
   render() {
     const { children } = this.props

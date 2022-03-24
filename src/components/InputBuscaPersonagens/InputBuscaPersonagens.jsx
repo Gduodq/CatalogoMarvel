@@ -31,10 +31,10 @@ export const InputBuscaPersonagens = ({ className, onEnter }) => {
   const handleChangeInput = React.useCallback(
     (event) => {
       const nameStartsWith = event.target.value
-      if (nameStartsWith) filtroControl.setFiltro({ ...filtro, nameStartsWith })
+      if (nameStartsWith) filtroControl.setFiltroAsync({ ...filtro, nameStartsWith })
       else {
         delete filtro.nameStartsWith
-        filtroControl.setFiltro({ ...filtro })
+        filtroControl.setFiltroAsync({ ...filtro })
       }
     },
     [filtro, filtroControl],

@@ -20,6 +20,7 @@ export const usePersonagensControl = () => React.useContext(ProviderPersonagensC
 
 export class ProviderPersonagensComponent extends Component {
   personagensSaoFavoritos = false
+  ordenacaoNomeAsc = true
   constructor(props) {
     super(props)
     this.state = { personagens: [], carregando: true, erro: false }
@@ -27,6 +28,7 @@ export class ProviderPersonagensComponent extends Component {
       fetchPersonagens: this.fetchPersonagens,
       setPersonagensFavoritos: this.setPersonagensFavoritos,
       unsetPersonagensFavoritos: this.unsetPersonagensFavoritos,
+      changeOrdenacaoNome: this.changeOrdenacaoNome,
     }
   }
 
@@ -65,11 +67,24 @@ export class ProviderPersonagensComponent extends Component {
     }
   }
 
-  setPersonagensFavoritos = (personagens) => this.setState({ personagens }, () => (this.personagensSaoFavoritos = true))
+  setPersonagensFavoritos = (personagensFavoritos) => {
+    let personagens
+    if (this.ordenacaoNomeAsc) personagens = personagensFavoritos.sort((a, b) => a.name.localeCompare(b.name))
+    else personagens = personagensFavoritos.sort((a, b) => b.name.localeCompare(a.name))
+    this.setState({ personagens: [...personagens] }, () => (this.personagensSaoFavoritos = true))
+  }
 
   unsetPersonagensFavoritos = () => {
     this.personagensSaoFavoritos = false
     this.fetchPersonagens()
+  }
+
+  changeOrdenacaoNome = async ({ asc } = {}) => {
+    const { filtroContext, filtroControl } = this.props
+    this.ordenacaoNomeAsc = asc
+    await filtroControl.setFiltroAsync({ ...filtroContext, orderBy: asc ? 'name' : '-name' })
+    if (!this.personagensSaoFavoritos) return await this.fetchPersonagens()
+    return this.setPersonagensFavoritos(this.state.personagens)
   }
 
   render() {
