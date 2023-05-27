@@ -1,57 +1,57 @@
-# Catálogo de Heróis da Marvel
+# Marvel Heroes Catalog
 
-Esse projeto foi iniciado com o [Create React App](https://github.com/facebook/create-react-app).
+This project was initiated with [Create React App](https://github.com/facebook/create-react-app).
 
-O projeto utiliza a [API da Marvel](https://developer.marvel.com/docs) para consultar os dados dos heróis.
+The project uses the [Marvel API](https://developer.marvel.com/docs) to fetch hero data.
 
-Como solução de estilo é utilizada a biblioteca focada em CSS-in-Js do [Material-UI](https://mui.com).
+As a styling solution, the CSS-in-Js library from [Material-UI](https://mui.com) is used.
 
-Para manutenção do código são utilizados os pacotes [Cypress](https://www.cypress.io), [ESLint](https://eslint.org) e [Prettier](https://prettier.io).
+For code maintenance, the [Cypress](https://www.cypress.io), [ESLint](https://eslint.org) and [Prettier](https://prettier.io) packages are utilized.
 
-Para acessar a aplicação sem a necessidade de instalar localmente acesse [https://catalogo-marvel-sigma.vercel.app](https://catalogo-marvel-sigma.vercel.app).
+To access the application without the need for local installation, visit [https://catalogo-marvel-sigma.vercel.app](https://catalogo-marvel-sigma.vercel.app).
 
-## Scripts disponíveis
+## Available Scripts
 
-Na pasta do projeto você pode utilizar dos comandos abaixo:
+In the project directory, you can run the following commands:
 
 ### `npm i`
 
-Instala as dependências para a aplicação ser executada.
+Installs the dependencies for the application to run.
 
 ### `npm start`
 
-Roda a aplicação em modo de desenvolvimento.\
-Abra [http://localhost:3000](http://localhost:3000) para ver a aplicação no browser.
+Runs the application in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm run build`
 
-Constroi a aplicação para produção na pasta `build`.
+Builds the application for production in the `build` folder.
 
 ### `npm run start-build-on-background`
 
-Esse comando espera que a aplicação esteja construída na pasta `build` e a inicia como um processo em background.
+This command expects the application to be built in the `build` folder and starts it as a background process.
 
 ### `npm run stop-build-background`
 
-Para e apaga o processo em background iniciado pelo comando `npm run start-build-on-background`.
+Stops and removes the background process started by the `npm run start-build-on-background` command.
 
 ### `npm run cypress:open`
 
-Abre o cypress de forma interativa para acompanhar e interagir com os testes no browser.
+Opens Cypress interactively to monitor and interact with tests in the browser.
 
 ### `npm run cypress:run`
 
-Abre o cypress via terminal e roda todos os testes do projeto.
+Runs all the tests in the project using Cypress via the terminal.
 
 ### `npm run lint`
 
-Checa por problemas de sintaxe no código da pasta `src` com o ESLint.
+Checks for syntax problems in the code within the src folder using ESLint.
 
 ## Variáveis de ambiente
 
-Para a utilização da aplicação é necessário que seja criado um arquivo `.env` na raiz do projeto para a inserção de variáveis de ambiente.
+To use the application, you need to create a `.env` file at the root of the project to store environment variables.
 
 ### REACT_APP_API_PUBLIC_KEY (`Obrigatória`)
 
-Essa variável é responsável por setar a API_KEY para autenticação com a API da Marvel.\
-Para mais informações acesse [este link](https://developer.marvel.com/).
+This variable is responsible for setting the API_KEY for authentication with the Marvel API.\
+For more information, visit [this link](https://developer.marvel.com/).
